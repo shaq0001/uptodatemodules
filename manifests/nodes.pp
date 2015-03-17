@@ -4,7 +4,7 @@ node 'wiki' {
 node 'wikitest' { 
 hiera_include('classes')
 }
-node 'default' {
+node 'iversosw7lt02.calabrio.ld' {
  hiera_include('classes')
  }
 class linux {

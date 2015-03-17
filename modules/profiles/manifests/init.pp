@@ -41,6 +41,7 @@ class profiles::windows::mysql-workbench{
   file { 'c:/temp/':
     ensure  => 'directory',
     }
+
   download_file { "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501":
    url                    =>                   'http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe',
    destination_directory  => 'c:\temp',
@@ -57,11 +58,11 @@ class profiles::windows::mysql-workbench{
    destination_directory  => 'c:\temp',
 }
 
- package { ""Microsoft .NET Framework 4 Client Profile":
+ package { "Microsoft .NET Framework 4 Client Profile":
    ensure          => 'installed',
    source          => 'c:\temp\dotNetFx40_Client_x86_x64.exe',
    install_options => ['/q'],
- }
+}
  
  
    download_file { "MYSQL Workbench 6.2 CE":
@@ -69,11 +70,11 @@ class profiles::windows::mysql-workbench{
    destination_directory  => 'c:\temp',
 }
 
- package { ""Microsoft .NET Framework 4 Client Profile":
+ package { "MYSQL Workbench 6.2 CE":
    ensure          => 'installed',
    source          => 'c:\temp\mysql-workbench-community-6.2.4-winx64.msi',
     }
- 
+ }
 class profiles::windows::putty{
  file { 'c:/admin tools':
  ensure => 'directory', 
