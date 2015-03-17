@@ -1,0 +1,34 @@
+---
+:backends:
+  - yaml
+:yaml:
+ :datadir:
+:hierarchy:
+  - "%{clientcert}"
+  - "%{environment}"
+  - wikidefault
+  - global
+
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+# - /var/lib/hiera on *nix
+# - %CommonAppData%\PuppetLabs\hiera\var on Windows
+# When specifying a datadir, make sure the directory exists.
+  :datadir:
+
+
+
+---
+classes:
+  - mediawiki
+  - linux
+mediawiki::wikisitename: wiki
+mediawiki::wikimetanamespace: Wiki
+mediawiki::wikiserver: IPaddress of the server
+mediawiki::wikidbname: wiki
+
+#windows -
+---
+classes:
+  - roles::windows-admin
+
